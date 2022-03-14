@@ -1,0 +1,23 @@
+[
+    {
+        "style": "hip-hop",
+        "body": "swaying back and forth",
+        "head": "moving back and forth",
+        "hands": "bent at the elbows",
+        "legs": "semi-squat position"
+    },
+    {
+        "style": "pop",
+        "body": "moving smoothy",
+        "head": "moving smoothy",
+        "hands": "moving smoothy",
+        "legs": "moving smoothy"
+    },
+    {
+        "style": "electrodance",
+        "body": "swaying back and forth",
+        "head": "no movement",
+        "hands": "are circular moved",
+        "legs": "move in rhythm"
+    }
+]
