@@ -12,6 +12,9 @@ copy `.env.template` as `.env` and set your variables
 
 `python manage.py runserver`
 
+
+
+
 ### frontend
 `cd frontend`
 
