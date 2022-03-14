@@ -1,23 +1,16 @@
 ## dancefloor
 ### backend
-`cd backend`
-
-`pip install -r ./requirements.txt`
-
-copy `.env.template` as `.env` and set your variables
-
-`python manage.py migrate`
-
-`python manage.py init_dances`
-
-`python manage.py runserver`
+1. `cd backend`
+2. `pip install -r ./requirements.txt`
+3. copy `.env.template` as `.env` and set your variables
+4. `python manage.py migrate`
+5. `python manage.py init_dances`
+6. `python manage.py runserver`
 
 
 
 
 ### frontend
-`cd frontend`
-
-`yarn`
-
-`yarn serve`
+1. `cd frontend`
+2. `yarn`
+3. `yarn serve`
