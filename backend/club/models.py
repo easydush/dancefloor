@@ -11,10 +11,9 @@ class Action(models.TextChoices):
 
 
 class Level(models.TextChoices):
-    LOW = 'LOW', _('likes')
-    MEDIUM = 'MEDIUM', _('is good in')
-    HIGH = 'HIGH', _('is professional in')
-
+    LOW = ('LOW', 'likes')
+    MEDIUM = ('MEDIUM', 'is good in')
+    HIGH = ('HIGH', 'is professional in')
 
 class Dance(models.Model):
     style = models.CharField(
@@ -32,7 +31,8 @@ class Dance(models.Model):
         max_length=DEFAULT_CHAR_MAX_LENGTH, blank=False)
 
     def __str__(self):
-        return self.style
+        return f'{self.style}: head is {self.head}, body is {self.body}, ' \
+               f'hands are {self.hands}, legs are {self.legs},'
 
 
 class Dancer(models.Model):
@@ -46,10 +46,16 @@ class Dancer(models.Model):
     def action(self, style=None):
         if not style:
             return Action.STOP
-        print(str(style))
-        print(list(self.skills.values_list('dance__style', flat=True)))
         can_dance = str(style) in list(self.skills.values_list('dance__style', flat=True))
         return Action.DANCE if can_dance else Action.DRINK
+
+    def current_skill(self, style=None):
+        if not style:
+            return 'is stopped'
+        can_dance = str(style) in list(self.skills.values_list('dance__style', flat=True))
+        if not can_dance:
+            return 'is drinking'
+        return self.skills.filter(dance__style=style).first().get_movement()
 
 
 class DanceSkill(models.Model):
@@ -59,3 +65,9 @@ class DanceSkill(models.Model):
 
     def __str__(self):
         return f'{self.dancer.name} {self.level} {self.dance.style}'
+
+    def get_style_label(self):
+        return Level(self.level).label
+
+    def get_movement(self):
+        return f'{self.get_style_label()} {str(self.dance)}'

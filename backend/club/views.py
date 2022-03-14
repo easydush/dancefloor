@@ -27,6 +27,7 @@ class DancerDetail(generics.RetrieveDestroyAPIView):
     queryset = Dancer.objects.all()
     serializer_class = DancerSerializer
 
+
 class DanceList(generics.ListCreateAPIView):
     queryset = Dance.objects.all()
     serializer_class = DanceSerializer
