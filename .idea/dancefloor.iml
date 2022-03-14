@@ -13,17 +13,25 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/venv" />
+    <content url="file://$MODULE_DIR$/backend">
+      <excludeFolder url="file://$MODULE_DIR$/backend/venv" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (backend)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="PyNamespacePackagesService">
+    <option name="namespacePackageFolders">
+      <list>
+        <option value="$MODULE_DIR$/backend/club" />
+        <option value="$MODULE_DIR$/backend/dancefloor" />
+      </list>
+    </option>
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/templates" />
+        <option value="$MODULE_DIR$/backend/templates" />
       </list>
     </option>
   </component>
